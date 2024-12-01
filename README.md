@@ -1,5 +1,3 @@
-# network-security
-Repository for network security project
 # Documentation des Scripts - Sécurité des Réseaux
 
 Ce document présente les différents scripts développés dans le cadre de l'exploration des attaques réseau. Chaque script est conçu pour simuler une attaque ou exploiter une vulnérabilité spécifique.
@@ -70,7 +68,7 @@ Ce script réalise une attaque Man-in-the-Middle (MITM) en manipulant les tables
 ## Utilisation
 ```bash
 python arp_mitm.py <victim_ip1> <victim_ip2> <victim_mac1> <victim_mac2> <interface>
-
+```
 ## Attaque DNS
 
 ## 1. `dns_spoof.py`
@@ -81,4 +79,5 @@ Ce script intercepte les requêtes DNS pour un domaine spécifique et renvoie un
 ## Utilisation
 ```bash
 python dns_spoof.py -d <spoofed_domain> -i <spoofed_ip> -n <interface>
+python dns_spoof.py -d efrei.fr -i 13.37.13.37 -n eth0
 ```
