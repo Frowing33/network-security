@@ -28,6 +28,8 @@ Une fois fait, on remarque bien via cette capture Wireshark, que le serveur atta
 (Le serveur légitime est bien lancé à ce moment de l'attaque.)
 ## DHCP Starvation
 ## 2. `dhcp_starvation.py`
+[Configuration YAML](https://github.com/Frowing33/network-security/blob/main/dhcp_starvation.py)
+
 
 ## Description
 Ce script exécute une attaque de DHCP starvation en inondant le serveur DHCP avec des requêtes malveillantes afin d'épuiser ses adresses IP disponibles.
