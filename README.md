@@ -86,3 +86,41 @@ Ce script intercepte les requêtes DNS pour un domaine spécifique et renvoie un
 python dns_spoof.py -d <spoofed_domain> -i <spoofed_ip> -n <interface>
 python dns_spoof.py -d efrei.fr -i 13.37.13.37 -n eth0
 ```
+
+# Remédiations :
+## 1. Attaques DHCP
+### Menaces :
+
+- DHCP Spoofing : Un attaquant crée un faux serveur DHCP.
+- DHCP Starvation : Saturation des adresses IP disponibles.
+
+### Remédiations :
+
+- DHCP Snooping : Configurez des switches pour bloquer les réponses DHCP non autorisées.
+- Isolation réseau : Utilisez des VLAN pour segmenter le trafic DHCP.
+- Limitation des adresses MAC : Limitez le nombre d’adresses MAC par port sur les switches.
+
+## 2. Attaques ARP
+
+### Menaces :
+
+- ARP Spoofing/Poisoning : Redirection du trafic via des réponses ARP falsifiées.
+### Remédiations :
+
+- Dynamic ARP Inspection (DAI) : Validez les requêtes ARP avec une base DHCP sécurisée.
+- Tables ARP statiques : Configurez manuellement des correspondances IP/MAC pour les appareils critiques.
+- Segmentation réseau : Utilisez des VLAN pour réduire la portée des attaques.
+## 3. Attaques DNS
+### Menaces :
+
+- DNS Spoofing/Cache Poisoning : Faux enregistrements dans le cache DNS.
+- DNS Amplification : Utilisation du DNS pour amplifier des attaques DDoS.
+- DNS Hijacking : Redirection malveillante via des configurations DNS compromises.
+
+### Remédiations :
+
+- DNSSEC : Sécurisez les réponses DNS avec des signatures cryptographiques.
+- Cache DNS restreint : Réduisez la durée de vie (TTL) des enregistrements DNS.
+- ACL et filtrage : Limitez l’accès au DNS aux serveurs autorisés.
+- Protection anti-DDoS : Activez des mécanismes de limitation des requêtes DNS.
+
